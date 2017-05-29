@@ -90,3 +90,12 @@ function main(){
 	});
 }
 
+//contato
+
+$(main)
+function contact(){
+    $("#btn").hide();
+    $("#btn").click(function(){
+    alert ("Email enviado com Sucesso!")
+    });
+}
