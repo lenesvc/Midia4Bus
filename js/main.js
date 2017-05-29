@@ -66,3 +66,16 @@ rotate = 0; // Declaramos uma variável com a rotação 0.
                 });
             });
             
+    //gallery
+    
+    $(document).ready(function() {
+
+            $("#gallery").mouseover(function() {
+            $(this).css("background-color","#4682B4");
+        });      
+            $("#gallery").mouseout(function() {
+            $(this).css("backgroundColor","#F3F1F1");
+        });      
+
+});    
+            
