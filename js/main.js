@@ -49,4 +49,20 @@ $('div.bg-parallax').each(function(){
             map: map,
             title: 'Midia 4 Bus!'
         });
-    }		
+    }
+    
+    //foto rotação
+rotate = 0; // Declaramos uma variável com a rotação 0.
+          
+            document.addEventListener("DOMContentLoaded", function(){ // Usando eventListener, e quando a página for carregada...
+             
+                document.getElementById("frente").addEventListener("mouseover", function(){ //Quando houver passar o mouse sobre o elemento..
+                    
+                    if(rotate == 360){rotate = 0} //Verificamos se o valor da variável rotate é 360, se for zeramos o valor.
+                 
+                    rotate = rotate + 30; //Fazemoz um incremento de 30, ou seja se antes tinha 0 e incrementamos 30 temos o valor de 30, na próxima execução se temos 30 e incrementamos mais 30, vamos para 60 e assim por diante.
+                     
+                    document.getElementById("frente").style.transform = "rotate("+rotate+"deg)"; //Acessamos o elemento img e através do style.transform atribuimos o rotate com o valor atual de nossa variável.
+                });
+            });
+            
