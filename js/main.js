@@ -34,4 +34,19 @@ $('div.bg-parallax').each(function(){
                
                
 		
-		
+//=====mapa 
+ var map;
+      function initMap(){
+        var myLatLng = {lat: -23.9436298, lng: -46.3331562};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Midia 4 Bus!'
+        });
+    }		
