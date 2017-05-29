@@ -78,4 +78,15 @@ rotate = 0; // Declaramos uma variável com a rotação 0.
         });      
 
 });    
-            
+
+//collapse
+
+$(main)
+
+function main(){
+	$(".content").hide();
+	$(".heading").click(function(){
+		$(this).next().slideToggle(500);
+	});
+}
+
