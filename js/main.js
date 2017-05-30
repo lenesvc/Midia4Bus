@@ -1,23 +1,30 @@
 //======menu fixo
  jQuery(document).ready(function(a) {
-         var b = a("#navbar-main").offset().top,
-         c = a(window);
-     c.scroll(function() {
+         var b = a("#navbar-main").offset().top,//armazenamos em uma variável o elemento #navbar-main
+         c = a(window);//variavel, tendo como elemento o window (que é a janela do seu monitor) 
+         
+     c.scroll(function() {//// informamos que o método utilizado para essa função será o SCROLL.
          c.scrollTop() >= b ? a("#navbar-main").removeClass("navbar-fixed-top").addClass("navbar-fixed-top") : a("#navbar-main").removeClass("navbar-fixed-top")
-     })
+     }) // scrollTop verifica se a rolagem da pagina é maior q b.Caso o usuário tenha rolado a página mais que b, 
+     //adiciona ao elemento #navbar-main a classe menuFixo;
+     //Caso não tenha rolado a página mais que b, remove a classe menuFixo.
  });
  //=====parallax
-$('div.bg-parallax').each(function(){
+$('div.bg-parallax').each(function(){ // identifica os elementos que o efeito será aplicado,são todos os elementos com a classe bgParallax.
 			var $obj = $(this);
 		 
 			$(window).scroll(function() {
-				var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+				var yPos = -($(window).scrollTop() / $obj.data('speed')); //velocidade do scroll dos backgrounds é diferente da velocidade do scroll da página. 
+				//É isso que causa o efeito de Parallax,por isso colocamos o atributo data-speed. 
+				//Iremos utilizar aquele valor para definir quão rápido será a rolagem do background.
+		        //Colocamos esse valor dentro de uma variável yPos. O valor é negativo por que o background tem que se mover para cima.
+				//O $(window).scrollTop() pega o valor de quanto a página já rolou do topo, esse valor é dividido pelo $obj.data(‘speed’), 
+				//que é o valor que colocamos no atributo data-speed de cada div.bgParallax.
+				var bgpos = '50% '+ yPos + 'px';//define que esse valor seja o valor do TOP no background-position dos divs. 
 		 
-				var bgpos = '50% '+ yPos + 'px';
+				$obj.css('background-position', bgpos ); //aplica as definições ao objeto
 		 
-				$obj.css('background-position', bgpos );
-		 
-			}); 
+			}); //scroll identifica quando o usuário rola a pagina
 		});
 
 //=====relógio
@@ -92,8 +99,8 @@ function main(){
 
 //contato
 
-$(main)
-function contact(){
+$(main2)
+function main2(){
     $("#btn").on('click',function(){
     alert ("Email enviado com Sucesso!")
     });
