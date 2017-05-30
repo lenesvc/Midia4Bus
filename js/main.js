@@ -94,8 +94,7 @@ function main(){
 
 $(main)
 function contact(){
-    $("#btn").hide();
-    $("#btn").click(function(){
+    $("#btn").on('click',function(){
     alert ("Email enviado com Sucesso!")
     });
 }
